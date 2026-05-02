@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="msGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b3a82"/>
+      <stop offset="100%" stop-color="#06122c"/>
+    </linearGradient>
+    <radialGradient id="msGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7dd3fc" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#msGrad)"/>
+  <rect width="400" height="300" fill="url(#msGlow)"/>
+
+  <!-- Decorative diamond -->
+  <g transform="translate(200,110) rotate(45)">
+    <rect x="-26" y="-26" width="52" height="52" fill="none" stroke="#7dd3fc" stroke-width="2" opacity="0.85"/>
+    <rect x="-16" y="-16" width="32" height="32" fill="none" stroke="#7dd3fc" stroke-width="1" opacity="0.5"/>
+  </g>
+  <text x="200" y="118" text-anchor="middle" fill="#7dd3fc"
+        font-family="ui-monospace" font-size="14" font-weight="700"
+        letter-spacing="2">FINALIST</text>
+
+  <text x="200" y="190" text-anchor="middle" fill="#ffffff"
+        font-family="ui-sans-serif, system-ui" font-size="22" font-weight="700"
+        letter-spacing="0.5">Microsoft Imagine Cup</text>
+
+  <text x="200" y="220" text-anchor="middle" fill="rgba(255,255,255,0.65)"
+        font-family="ui-monospace" font-size="11" letter-spacing="2">ASIA REGIONAL</text>
+
+  <text x="200" y="260" text-anchor="middle" fill="#7dd3fc"
+        font-family="ui-monospace" font-size="13" letter-spacing="3" opacity="0.85">2020</text>
+</svg>

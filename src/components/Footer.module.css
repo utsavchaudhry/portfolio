@@ -1,0 +1,29 @@
+.footer {
+  padding-block: var(--space-8) var(--space-12);
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-16);
+}
+
+.inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.footer p {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--fg-dim);
+  letter-spacing: 0.05em;
+}
+
+.subnote a {
+  color: var(--fg-muted);
+  border-bottom: 1px dotted var(--border-strong);
+}
+
+.subnote a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}

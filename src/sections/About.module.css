@@ -1,0 +1,111 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  font-size: var(--fs-lg);
+  color: var(--fg-muted);
+  line-height: 1.7;
+}
+
+.copy strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.copy a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(125, 211, 252, 0.4);
+  text-underline-offset: 3px;
+}
+
+.copy a:hover {
+  text-decoration-color: var(--accent);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: sticky;
+  top: 90px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.cardEyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-3);
+}
+
+.school {
+  font-size: var(--fs-lg);
+  color: var(--fg);
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.muted {
+  color: var(--fg-muted);
+  font-size: var(--fs-sm);
+}
+
+.gpa {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--accent-warm);
+}
+
+.coursework {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--fg-muted);
+}
+
+.coursework li {
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.coursework li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .sidebar {
+    position: static;
+  }
+}

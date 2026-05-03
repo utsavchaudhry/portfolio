@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
+import Clarity from './components/Clarity.jsx';
 import Navbar from './components/Navbar.jsx';
 import Hero from './sections/Hero.jsx';
 import About from './sections/About.jsx';
@@ -27,6 +28,7 @@ export default function App() {
       <Footer />
       <Analytics />
       <SpeedInsights />
+      <Clarity />
     </>
   );
 }

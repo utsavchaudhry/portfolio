@@ -118,6 +118,9 @@ export const experience = [
 // ─── Projects ──────────────────────────────────────────────────────────────
 // Each project gets the same alternating-card layout. Optional fields:
 //   subtitle, period, highlights — appear in the body if provided
+//   url, urlLabel                — adds a CTA button under the description
+//                                  linking to a live demo / project page.
+//                                  urlLabel defaults to 'Visit project'.
 //   youtubeUrls                  — array. 0 URLs → gradient placeholder.
 //                                  1 URL → single embedded player. 2+ URLs
 //                                  → carousel with prev/next + dot
@@ -159,6 +162,35 @@ export const projects = [
       "https://www.youtube.com/shorts/UuoYXG7MwtI",
       "https://www.youtube.com/shorts/FSDG3XCRdH4",
       "https://www.youtube.com/shorts/LTkfFYvGd3s",
+    ],
+  },
+  {
+    title: "HOPE JR @ Metal Shop",
+    subtitle: "Commercial Telepresence Deployment",
+    period: "2025 — Present",
+    description:
+      "Sold a HOPE JR unit to a Philadelphia metal shop and built the full telepresence stack around it. Customers connect through a React + WebRTC webapp to drive the robot around the shop and talk to staff with two-way audio/video — including a face screen mounted on the robot's head that mirrors the operator back to people on-site. Cloudflare Workers handle the signaling.",
+    tags: [
+      "React",
+      "TypeScript",
+      "WebRTC",
+      "Cloudflare Workers",
+      "ESP32",
+      "Telepresence",
+    ],
+    highlights: [
+      "Live commercial deployment in a Philadelphia metal shop",
+      "Two-way A/V with operator face mirrored on robot head screen",
+      "Virtual joystick UI for arm + head, low-latency over WebRTC data channel",
+      "Cloudflare Workers signaling — same stack as utsavchaudhary.us",
+    ],
+    url: "https://shopmetal.com/robot",
+    urlLabel: "Try teleop",
+    youtubeUrls: [
+      {
+        url: "https://www.youtube.com/shorts/wfb0P1JlnsE",
+        orientation: "landscape",
+      },
     ],
   },
   {

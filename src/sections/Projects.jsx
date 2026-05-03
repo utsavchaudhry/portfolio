@@ -146,6 +146,30 @@ function ProjectCard({ project, index }) {
           <p className={styles.description}>{project.description}</p>
         </div>
 
+        {project.url && (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.cta}
+          >
+            <span>{project.urlLabel || 'Visit project'}</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7 17L17 7M17 7H8M17 7V16" />
+            </svg>
+          </a>
+        )}
+
         {project.tags?.length > 0 && (
           <ul className={styles.tags}>
             {project.tags.map((t) => (

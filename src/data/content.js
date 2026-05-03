@@ -230,12 +230,7 @@ export const projects = [
       "Azure-powered speech + cloud backend",
       "Microsoft Imagine Cup 2020 — Asia Finalist",
     ],
-    youtubeUrls: [
-      {
-        url: "https://www.youtube.com/watch?v=rZD0KvN3nq8",
-        orientation: "square",
-      },
-    ],
+    youtubeUrls: ["https://www.youtube.com/watch?v=rZD0KvN3nq8"],
   },
   {
     title: "VRClassroom",

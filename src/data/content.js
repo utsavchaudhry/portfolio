@@ -14,6 +14,9 @@ import mitImg from "../assets/awards/MIT_reality_hack.jpeg";
 import msImg from "../assets/awards/microsoft_imagine_cup.webp";
 import nasaImg from "../assets/awards/nasa_space_app.webp";
 
+// Profile photo (used in About section).
+import ucPhoto from "../assets/uc_pic.webp";
+
 // ─── Personal info ─────────────────────────────────────────────────────────
 export const personal = {
   name: "Utsav Chaudhary",
@@ -26,6 +29,8 @@ export const personal = {
   email: "uc49@drexel.edu",
   phone: "+1 267 992 7358",
   resume: "/ResumeUtsavChaudhary.pdf",
+  photo: ucPhoto,
+  photoAlt: "Utsav Chaudhary",
 };
 
 // ─── Social links ──────────────────────────────────────────────────────────

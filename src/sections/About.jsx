@@ -42,31 +42,44 @@ export default function About() {
           </FadeIn>
 
           <FadeIn delay={0.15} className={styles.sidebar}>
-            <div className={styles.card}>
-              <div className={styles.cardEyebrow}>Education</div>
-              <div className={styles.school}>{education.school}</div>
-              <div className={styles.muted}>{education.degree}</div>
-              <div className={styles.muted}>{education.graduation}</div>
-              <div className={styles.gpa}>{education.gpa}</div>
-            </div>
-
-            <div className={styles.card}>
-              <div className={styles.cardEyebrow}>Most recent</div>
-              <div className={styles.school}>Teleoperation Intern</div>
-              <div className={styles.muted}>Fauna Robotics · NYC</div>
-              <div className={styles.muted}>Sep 2025 — May 2026</div>
-            </div>
-
-            <div className={styles.card}>
-              <div className={styles.cardEyebrow}>Coursework</div>
-              <ul className={styles.coursework}>
-                {education.coursework.map((c) => (
-                  <li key={c}>{c}</li>
-                ))}
-              </ul>
-            </div>
+            {personal.photo && (
+              <div className={styles.photoWrap}>
+                <img
+                  src={personal.photo}
+                  alt={personal.photoAlt || personal.name}
+                  loading="lazy"
+                  className={styles.photo}
+                />
+              </div>
+            )}
           </FadeIn>
         </div>
+
+        <FadeIn delay={0.2} className={styles.infoRow}>
+          <div className={styles.card}>
+            <div className={styles.cardEyebrow}>Education</div>
+            <div className={styles.school}>{education.school}</div>
+            <div className={styles.muted}>{education.degree}</div>
+            <div className={styles.muted}>{education.graduation}</div>
+            <div className={styles.gpa}>{education.gpa}</div>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.cardEyebrow}>Most recent</div>
+            <div className={styles.school}>Teleoperation Intern</div>
+            <div className={styles.muted}>Fauna Robotics · NYC</div>
+            <div className={styles.muted}>Sep 2025 — May 2026</div>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.cardEyebrow}>Coursework</div>
+            <ul className={styles.coursework}>
+              {education.coursework.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

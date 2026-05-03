@@ -38,6 +38,50 @@
   top: 90px;
 }
 
+.photoWrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.photoWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    rgba(11, 15, 23, 0.35) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.photoWrap:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.photoWrap:hover::after {
+  opacity: 1;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: saturate(0.95);
+  transition: filter var(--transition);
+}
+
+.photoWrap:hover .photo {
+  filter: saturate(1.1);
+}
+
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -100,6 +144,14 @@
   font-size: 0.75rem;
 }
 
+/* 3-column row of info cards below the bio + photo */
+.infoRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
@@ -107,5 +159,10 @@
   }
   .sidebar {
     position: static;
+  }
+  .infoRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
   }
 }

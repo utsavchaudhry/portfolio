@@ -197,16 +197,17 @@ export const projects = [
     subtitle: "Cross-Platform Virtual Classroom",
     period: "Dec 2021",
     description:
-      "A 3D multiplayer virtual classroom supporting 20+ concurrent users across VR headsets and web browsers. Implemented WebRTC video/audio/text chat for cross-platform communication and a synced virtual whiteboard.",
-    tags: ["UnityXR", "Photon Networking", "WebRTC", "WebGL"],
+      "A 3D multiplayer virtual classroom supporting 20+ concurrent users across VR headsets and web browsers. Implemented WebRTC video/audio/text chat for cross-platform communication and a synced virtual whiteboard. Built on a shared Photon networking foundation (transform + event sync) that also powers a VR-only collaborative variant for headset-only sessions.",
+    tags: ["UnityXR", "Photon Networking", "WebRTC", "WebGL", "C#", "Multiplayer"],
     highlights: [
       "20+ concurrent users across VR + web",
-      "Cross-platform whiteboard sync",
-      "Real-time A/V/text via WebRTC",
+      "Cross-platform whiteboard + WebRTC A/V/text",
+      "Photon transform/event sync foundation, reused for a VR-only mode",
     ],
     youtubeUrls: [
       "https://www.youtube.com/watch?v=SgdRF0Lw-1k",
       "https://www.youtube.com/watch?v=ZQ7BgiFFC6s",
+      "https://www.youtube.com/watch?v=FDiR1IC9wIc",
     ],
   },
   {
@@ -231,19 +232,6 @@ export const projects = [
       "Microsoft Imagine Cup 2020 — Asia Finalist",
     ],
     youtubeUrls: ["https://www.youtube.com/watch?v=rZD0KvN3nq8"],
-  },
-  {
-    title: "VRClassroom",
-    subtitle: "Multi-User Collaborative VR Space",
-    description:
-      "A networked VR environment where multiple headset-wearing users share the same collaborative space. State and interactions are synchronized across the network in real time — designed for remote collaboration scenarios.",
-    tags: ["UnityXR", "Photon", "C#", "VR", "Multiplayer"],
-    highlights: [
-      "Multiple users co-present in shared VR space",
-      "Network-synchronized interactions via Photon",
-      "Built for remote collaboration",
-    ],
-    youtubeUrls: ["https://www.youtube.com/watch?v=FDiR1IC9wIc"],
   },
 ];
 

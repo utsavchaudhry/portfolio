@@ -158,7 +158,6 @@ export const projects = [
     youtubeUrls: [
       "https://www.youtube.com/shorts/sDc2gPa2DL8",
       "https://www.youtube.com/shorts/LgUHSN355pU",
-      "https://www.youtube.com/shorts/wfb0P1JlnsE",
       "https://www.youtube.com/shorts/UuoYXG7MwtI",
       "https://www.youtube.com/shorts/FSDG3XCRdH4",
       "https://www.youtube.com/shorts/LTkfFYvGd3s",

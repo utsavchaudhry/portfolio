@@ -81,7 +81,7 @@ export const experience = [
     tags: ["ROS2", "React", "WebRTC", "Foxglove", "VR"],
   },
   {
-    company: "UpRight VR",
+    company: "UprightVR",
     role: "VR Developer",
     location: "Philadelphia, PA",
     period: "Sep 2022 — Aug 2024",

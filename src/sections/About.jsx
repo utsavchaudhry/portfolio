@@ -1,7 +1,7 @@
-import styles from './About.module.css';
-import SectionHeader from '../components/SectionHeader.jsx';
-import FadeIn from '../components/FadeIn.jsx';
-import { education, personal } from '../data/content.js';
+import styles from "./About.module.css";
+import SectionHeader from "../components/SectionHeader.jsx";
+import FadeIn from "../components/FadeIn.jsx";
+import { education, personal } from "../data/content.js";
 
 export default function About() {
   return (
@@ -12,23 +12,32 @@ export default function About() {
         <div className={styles.grid}>
           <FadeIn delay={0.05} className={styles.copy}>
             <p>
-              I started in game development — building 2D learning games at Chimpvine,
-              then moved into VR rehabilitation tools at UpRight VR and Drexel research.
-              Somewhere between engineering biometric game controllers and writing
-              inverse kinematics solvers, I realized I wanted to build the bridge
-              between immersive interfaces and physical robots.
+              I started in game development — building 2D learning games at
+              Chimpvine, then moved into VR rehabilitation tools at UprightVR
+              and Drexel research. Somewhere between engineering biometric game
+              controllers and writing inverse kinematics solvers, I realized I
+              wanted to build the bridge between immersive interfaces and
+              physical robots.
             </p>
             <p>
-              Most recently I was at <a href="https://faunarobotics.com" target="_blank" rel="noopener noreferrer">
+              Most recently I was at{" "}
+              <a
+                href="https://faunarobotics.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Fauna Robotics
-              </a> wiring up teleoperation systems — ROS2 backends, React dashboards, and VR
-              controls all talking to the same robot. The messy parts hooked me: real-time
-              state sync, hardware quirks, the latency budgets between a headset and a servo.
+              </a>{" "}
+              wiring up teleoperation systems — ROS2 backends, React dashboards,
+              and VR controls all talking to the same robot. The messy parts
+              hooked me: real-time state sync, hardware quirks, the latency
+              budgets between a headset and a servo.
             </p>
             <p>
-              Outside of work, I tinker with 3D-printed humanoids and ESP32 boards. The
-              best week of last year was watching <strong>HOPE JR</strong> mirror my arm
-              movements at the Humanoids Summit.
+              Outside of work, I tinker with 3D-printed humanoids and ESP32
+              boards. The best week of last year was watching{" "}
+              <strong>HOPE JR</strong> mirror my arm movements at the Humanoids
+              Summit.
             </p>
           </FadeIn>
 

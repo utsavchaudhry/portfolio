@@ -73,10 +73,44 @@
   font-size: var(--fs-xl);
   color: var(--fg);
   margin-bottom: var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .placement {
   color: var(--fg-muted);
   font-size: var(--fs-sm);
   line-height: 1.5;
+}
+
+/* Clickable variant — anchor-wrapped card linking to a certificate */
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.cardLink:hover {
+  color: inherit;
+  border-color: var(--accent);
+}
+
+.cardLink:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.linkIcon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  opacity: 0.55;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.cardLink:hover .linkIcon,
+.cardLink:focus-visible .linkIcon {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }

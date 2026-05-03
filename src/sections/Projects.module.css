@@ -16,10 +16,30 @@
   align-items: center;
 }
 
-.cardReversed .visual { order: 2; }
+.cardReversed .visualSlot { order: 2; }
 .cardReversed .body { order: 1; text-align: right; }
 .cardReversed .body .descriptionWrap { margin-left: auto; }
 .cardReversed .body .tags { justify-content: flex-end; }
+
+/* Portrait variant — narrower visual column, 9:16 frame for Shorts */
+.cardPortrait {
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+  gap: var(--space-12);
+}
+
+/* Square variant — visual column sized between landscape and portrait */
+.cardSquare {
+  grid-template-columns: minmax(280px, 0.55fr) minmax(0, 1fr);
+  gap: var(--space-12);
+}
+
+/* Wrapper that holds the aspect-ratio frame + the carousel nav */
+.visualSlot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
 
 /* ───────────── Visual frame (used by both placeholder + video) ───────────── */
 .visual {
@@ -29,12 +49,103 @@
   overflow: hidden;
   background: linear-gradient(135deg, #0e1626 0%, #1a2440 100%);
   border: 1px solid var(--border);
-  transition: transform var(--transition), border-color var(--transition);
+  transition: aspect-ratio var(--transition), transform var(--transition),
+    border-color var(--transition);
+}
+
+.cardPortrait .visual {
+  aspect-ratio: 9 / 16;
+}
+
+.cardSquare .visual {
+  aspect-ratio: 1 / 1;
 }
 
 .card:hover .visual {
   transform: translateY(-4px);
   border-color: var(--accent);
+}
+
+/* ───────────── Carousel nav (only renders when there are 2+ videos) ───────────── */
+.videoNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding-top: var(--space-1);
+}
+
+.navArrow {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--fg-muted);
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast), border-color var(--transition-fast),
+    background var(--transition-fast), transform var(--transition-fast);
+}
+
+.navArrow:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(125, 211, 252, 0.08);
+  transform: translateY(-1px);
+}
+
+.navArrow:active {
+  transform: translateY(0);
+}
+
+.navDots {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navDot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1.5px solid var(--border-strong);
+  padding: 0;
+  cursor: pointer;
+  transition: width var(--transition-fast), background var(--transition-fast),
+    border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.navDot:hover {
+  border-color: var(--accent);
+  transform: scale(1.15);
+}
+
+.navDotActive {
+  width: 22px;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.navDotActive:hover {
+  transform: scale(1.05);
+}
+
+.navCounter {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--fg-dim);
+  letter-spacing: 0.08em;
+  margin-left: var(--space-2);
+  min-width: 36px;
+  text-align: right;
 }
 
 /* ───────────── Placeholder visual (no video) ───────────── */
@@ -126,6 +237,22 @@
 
 .videoThumb:hover .videoThumbImg { transform: scale(1.46); }
 
+/* Portrait shorts: hqdefault is still landscape, so cover-cropping into a
+   9:16 frame already crops aggressively — no extra scale needed. */
+.videoThumbImgPortrait,
+.videoThumb:hover .videoThumbImgPortrait {
+  transform: scale(1);
+}
+
+/* Square: cover-crop into 1:1 already removes side bars; small zoom to
+   match the polish of the landscape thumb. */
+.videoThumbImgSquare {
+  transform: scale(1.15);
+}
+.videoThumb:hover .videoThumbImgSquare {
+  transform: scale(1.2);
+}
+
 .videoOverlay {
   position: absolute;
   inset: 0;
@@ -173,14 +300,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-}
-
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
 }
 
 .title {
@@ -234,10 +353,13 @@
 
 @media (max-width: 768px) {
   .card,
-  .cardReversed {
+  .cardReversed,
+  .cardPortrait,
+  .cardSquare {
     grid-template-columns: 1fr;
+    gap: var(--space-6);
   }
-  .cardReversed .visual,
+  .cardReversed .visualSlot,
   .cardReversed .body {
     order: initial;
   }
@@ -249,6 +371,20 @@
   }
   .cardReversed .body .tags {
     justify-content: flex-start;
+  }
+
+  /* Portrait visuals on mobile: cap slot width so the frame + nav stay centered together */
+  .cardPortrait .visualSlot {
+    max-width: 280px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  /* Square visuals on mobile: similar cap, slightly wider since 1:1 stays readable */
+  .cardSquare .visualSlot {
+    max-width: 380px;
+    margin-inline: auto;
+    width: 100%;
   }
 
   .placeholderTitle { font-size: var(--fs-2xl); }

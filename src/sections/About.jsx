@@ -68,7 +68,7 @@ export default function About() {
             <div className={styles.cardEyebrow}>Most recent</div>
             <div className={styles.school}>Teleoperation Intern</div>
             <div className={styles.muted}>Fauna Robotics · NYC</div>
-            <div className={styles.muted}>Sep 2025 — May 2026</div>
+            <div className={styles.muted}>Sep 2025 — March 2026</div>
           </div>
 
           <div className={styles.card}>

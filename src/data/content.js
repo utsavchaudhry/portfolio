@@ -78,7 +78,7 @@ export const experience = [
     company: "Fauna Robotics",
     role: "Teleoperation Intern",
     location: "New York, NY",
-    period: "Sep 2025 — May 2026",
+    period: "Sep 2025 — March 2026",
     bullets: [
       "Connected a ROS2 backend to a React frontend via Foxglove bridge, WebRTC, and custom REST APIs — built a robot status, control, and debug dashboard for live monitoring and teleoperation.",
       "Designed VR interfaces to switch robot modes/skills and visualize robot state (joint pose, motor temperatures, etc.).",
@@ -203,7 +203,14 @@ export const projects = [
     period: "Dec 2021",
     description:
       "A 3D multiplayer virtual classroom supporting 20+ concurrent users across VR headsets and web browsers. Implemented WebRTC video/audio/text chat for cross-platform communication and a synced virtual whiteboard. Built on a shared Photon networking foundation (transform + event sync) that also powers a VR-only collaborative variant for headset-only sessions.",
-    tags: ["UnityXR", "Photon Networking", "WebRTC", "WebGL", "C#", "Multiplayer"],
+    tags: [
+      "UnityXR",
+      "Photon Networking",
+      "WebRTC",
+      "WebGL",
+      "C#",
+      "Multiplayer",
+    ],
     highlights: [
       "20+ concurrent users across VR + web",
       "Cross-platform whiteboard + WebRTC A/V/text",
